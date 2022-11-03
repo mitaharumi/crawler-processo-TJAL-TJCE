@@ -143,28 +143,3 @@ class Database:
             return sorted(dados_processo, key=lambda processo: processo['numero'])
 
 
-def teste():
-    db = Database()
-    # db.inserir_processos_em_controle_extracao(['13', '24'], '900')
-    # db.consultar(ModelControleExtracao)
-    # db.consultar_quantidade_processos_restantes(id_requisicao=1667244264)
-    # db.pegar_processo_nao_inicializado()
-
-    # id_requisicao = db.pegar_id_requisicao_mais_antiga_nao_inicializada()
-    # processo = db.pegar_processo_nao_inicializado(id_requisicao)
-    # db.atualizar_status_extracao(processo, -1)
-    # db.atualizar_data_inicial(processo)
-    # db.consultar_colletion(ModelControleExtracao)
-    # db.pegar_dados_requisicao('1667346967')
-    # db.consultar_colletion(ModelControleExtracao)
-    # db.limpar_collection(ModelControleExtracao)
-    # db.limpar_collection(ModelDadosProcessoPrimeiroGrau)
-    # db.limpar_collection(ModelDadosProcessoSegundoGrau)
-
-    db.consultar_colletion(ModelDadosProcessoPrimeiroGrau)
-    db.consultar_colletion(ModelDadosProcessoSegundoGrau)
-    # db.destravar_emissoes()
-
-# asyncio.run(teste())
-teste()
-
