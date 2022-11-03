@@ -126,11 +126,11 @@ Ou execute o comando
     ```
     { "numeros_processos" : ["29650-85.2021.8.02.0001", "33864-85.2022.8.02.0001"] }
     ```
-    ![img.png](post.png)
+    ![img.png](utils/post.png)
 
     > recebera um id_requisicao no retorno que deve ser utilizado para consultar os dados da extração
 - consulte dados da extração pelo link, passando o id_requisicao no final:
   - localhost:5000/consultar-requisicao?id_requisicao=<id_requicao>
-  ![img_1.png](get.png)
+  ![img_1.png](utils/get.png)
 
-> caso prefira, ultize a exportacao: insomnia-exportacao-crawler-processos.json
+> caso prefira, ultize a exportacao: utils/insomnia-exportacao-crawler-processos.json
