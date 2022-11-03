@@ -7,6 +7,7 @@ import time
 
 app = Flask(__name__)
 
+
 @app.route('/', methods=['GET'])
 def _():
     return "true"
@@ -30,9 +31,9 @@ def nova_requisicao():
 
     retorno = f'Requisicao {id_requisicao}\n'
     retorno += f'Foram enviados {len(numeros_processos)} processos ' if len(numeros_processos) != 1 else 'foi enviado 1 processo '
-    retorno += f'para extracao, consulte os dados em http://localhost:5000/consultar-requisicao?id_requisicao={id_requisicao}'
+    retorno += f'para extracao, consulte os dados em http://localhost:5000/consultar-requisicao?id_requisicao={id_requisicao}.'
     if numeros_processos_invalidos:
-        retorno += f'\n\nNumero de processos com dados invalidos: {numeros_processos_invalidos}'
+        retorno += f'<br><br>Numero de processos com dados invalidos: {numeros_processos_invalidos}'
 
     print(retorno)
     return retorno
@@ -49,7 +50,7 @@ def consultar_requisicao():
     if quantidade_processos_restantes != 0:
         retorno = f'Faltam {quantidade_processos_restantes} processos para serem extraidos ' \
             if quantidade_processos_restantes > 1 else f'Falta 1 processo para ser extraido '
-        retorno += f'na requisicao {id_requisicao}'
+        retorno += f'na requisicao {id_requisicao}, por favor, aguarde mais um pouco!'
         return retorno
 
     dados_processo = db.pegar_dados_requisicao(id_requisicao)
