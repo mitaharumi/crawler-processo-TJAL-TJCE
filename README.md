@@ -133,3 +133,4 @@ Ou execute o comando
   - localhost:5000/consultar-requisicao?id_requisicao=<id_requicao>
   ![img_1.png](get.png)
 
+> caso prefira, ultize a exportacao: insomnia-exportacao-crawler-processos.json
