@@ -46,9 +46,3 @@ class ModelDadosProcessoSegundoGrau(Document):
     secao = StringField()
     orgao_julgador = StringField()
     relator = StringField()
-
-
-class ModelDadosProcesso(Document):
-    numero_processo = IntField(required=True, max_length=20)
-    dados_processo_primeiro_grau = ModelDadosProcessoPrimeiroGrau
-
