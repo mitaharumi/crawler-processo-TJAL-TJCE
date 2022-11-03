@@ -3,8 +3,8 @@ Crawler realizado em pyppeteer que busca dados de um processo de primeiro e segu
 
 ----
 #### todo
-- [ ] arquivos teste para rodar localmente
 - [ ] pretty retorno api
+- [ ] api swagger
 - [ ] atualizacao do readme
   - [ ] outros SO
 - [ ] documentacao de funcao
@@ -122,30 +122,14 @@ Ou execute o comando
   - [localhost:5000/](localhost:5000/)
 - envie numero de processos pelo link:
   - [localhost:5000/nova-requisicao](localhost:5000/nova-requisicao)
-    - recebera um id_requisicao no retorno que deve ser utilizado para consultar os dados da extração
+    - deve passar um json como parametro na seguinte estrutura: 
+    ```
+    { "numeros_processos" : ["29650-85.2021.8.02.0001", "33864-85.2022.8.02.0001"] }
+    ```
+    ![img.png](post.png)
+
+    > recebera um id_requisicao no retorno que deve ser utilizado para consultar os dados da extração
 - consulte dados da extração pelo link, passando o id_requisicao no final:
   - localhost:5000/consultar-requisicao?id_requisicao=<id_requicao>
-
-{
-	"numeros_processos" : [
-		"0729650-85.2021.8.02.0001", 
-		"0733864-85.2022.8.02.0001", 
-		"0734578-79.2021.8.02.0001", 
-		"0729237-72.2021.8.02.0001", 
-		"0728504-43.2020.8.02.0001",
-		"0070337-91.2008.8.06.0001",
-		"0710802-55.2018.8.02.0001"
-	]
-}
-
-
-numeros = []
-
-for (a of document.querySelectorAll('.DocumentFooter-item > a')){
-  numero = a.innerText.replace('Andamento do Processo n.', '')
-  numeros.push(numero.slice(0, 26))
-}
-
-console.log(numeros)
-
+  ![img_1.png](get.png)
 
