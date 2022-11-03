@@ -8,14 +8,14 @@ class CrawlerBase:
         self.page = None
 
     async def iniciar_navegador(self):
-        self.browser = await launch(headless=False, handleSIGINT=False, handleSIGTERM=False, handleSIGHUP=False)
-        # self.browser = await launch(
-        #     headless=True,
-        #     args=['--no-sandbox'],
-        #     handleSIGINT=False,
-        #     handleSIGTERM=False,
-        #     handleSIGHUP=False
-        # )
+        # self.browser = await launch(headless=False, handleSIGINT=False, handleSIGTERM=False, handleSIGHUP=False)
+        self.browser = await launch(
+            headless=True,
+            args=['--no-sandbox'],
+            handleSIGINT=False,
+            handleSIGTERM=False,
+            handleSIGHUP=False
+        )
         self.page = await self.browser.newPage()
         self.page.setDefaultNavigationTimeout(5000)
 
